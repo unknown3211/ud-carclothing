@@ -1,0 +1,13 @@
+Add To Inventory Shared Items List
+
+itemList["vehiclepaint"] = { 
+  fullyDegrades: false, 
+  decayrate: 0.1, 
+  displayname: "Vehicle Paint", 
+  price: 1000, 
+  weight: 1, 
+  nonStack: true, 
+  model: "", 
+  image: "vehiclepaint.png", 
+  deg: true
+};
