@@ -1,0 +1,5 @@
+ADD TO QB-CORE SHARED ITEMS.LUA
+
+['vehiclepaint']                    = {['name'] = 'vehiclepaint',                      ['label'] = 'Vehicle Paint',             ['weight'] = 100,          ['type'] = 'item',         ['image'] = 'vehiclepaint.png',            ['unique'] = true,          ['useable'] = true,      ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Just Vehicle Paint BWO'},
+
+THEN ADD IMG TO INVENTORY HTML/IMAGES
