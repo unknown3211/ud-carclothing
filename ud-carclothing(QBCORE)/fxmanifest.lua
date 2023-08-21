@@ -3,8 +3,6 @@ game 'gta5'
 author 'UnknownJohn'
 description 'Changeable Car Colors'
 
-client_script "@np-lib/client/cl_ui.lua"
-
 client_scripts {
     'client/cl_*.lua'
 }

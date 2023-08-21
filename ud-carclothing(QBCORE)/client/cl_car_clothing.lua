@@ -1,22 +1,21 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-RegisterCommand('carclothing', function()
-    TriggerEvent('ud-carclothing:EnterVehicleColor')
-end)
-
 RegisterNetEvent('ud-carclothing:EnterVehicleColor', function(data)
-    exports['np-ui']:openApplication('textbox', {
-        callbackUrl = 'ud-carclothing:ChangeCarColors',
-        key = 1,
-        items = {
-          {
-            icon = "car",
-            label = "Vehicle Color",
-            name = "udvehiclecolor",
-          },
-        },
-        show = true,
+    local CarClothing = exports['qb-input']:ShowInput({
+        header = "Vehicle Sprays",
+        inputs = {
+            {
+                type = 'text',
+                isRequired = true,
+                name = 'color',
+                text = "VehicleColor"
+            },
+        }
     })
+
+    if CarClothing then
+        TriggerEvent("ud-carclothing:ChangeCarColors", CarClothing.color)
+    end
 end)
 
 local animDict1 = 'switch@franklin@lamar_tagging_wall'
@@ -24,9 +23,8 @@ local animation1 = 'lamar_tagging_wall_loop_lamar'
 local animDict2 = 'switch@franklin@lamar_tagging_wall'
 local animation2 = 'lamar_tagging_exit_loop_lamar'
 
-RegisterUICallback('ud-carclothing:ChangeCarColors', function(data, cb)
-    cb({ data = {}, meta = { ok = true, message = '' } })
-    local colorName = data.values.udvehiclecolor:lower()
+RegisterNetEvent('ud-carclothing:ChangeCarColors', function(data, cb)
+    local colorName = data:lower()
     local color = Config.ColorMap[colorName]
 
     if color then
