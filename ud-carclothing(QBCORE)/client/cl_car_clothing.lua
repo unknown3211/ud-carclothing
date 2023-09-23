@@ -40,24 +40,19 @@ RegisterNetEvent('ud-carclothing:ChangeCarColors', function(data, cb)
         loadAnimDict(animDict1)
         TaskPlayAnim(ped, animDict1, animation1, 1.0, 4.0, -1, 49, 0, false, false, false)
 
-        QBCore.Functions.Progressbar("getspray", "Getting Spray Ready...", 7000, false, true, {
+        QBCore.Functions.Progressbar("changecolor", "Preparing and Changing Color...", 14000, false, true, {
             disableMovement = true,
             disableCarMovement = false,
             disableMouse = false,
             disableCombat = false,
         })
-        Citizen.Wait(7000)
 
+        Citizen.Wait(7000)
+        
         ClearPedTasks(ped)
         loadAnimDict(animDict2)
         TaskPlayAnim(ped, animDict2, animation2, 1.0, 4.0, -1, 49, 0, false, false, false)
 
-        QBCore.Functions.Progressbar("changecolor", "Changing Color...", 7000, false, true, {
-            disableMovement = true,
-            disableCarMovement = false,
-            disableMouse = false,
-            disableCombat = false,
-        })
         Citizen.Wait(7000)
 
         ClearPedTasks(ped)
